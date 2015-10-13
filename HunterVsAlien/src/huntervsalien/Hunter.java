@@ -6,6 +6,7 @@
 package huntervsalien;
 
 import GameBuilder.GameComponent;
+import java.util.Arrays;
 
 /**
  *
@@ -61,16 +62,12 @@ public class Hunter extends GameBuilder.GameComponent{
         if(pular)
             pulando(y);
         
-        /*if(codAction == keyUp) {
-            pular = true;
-            topo = false;
-        }*/
-        
         if(codAction == keyRight) {
             x+=0.2;
             setGameComponentPositionHorizontal(x);
             int sprite = getGameComponentCurrentSprite();
-            if(!GameComponentWait(100)) {
+            //if(!GameComponentWait(100)) {
+            if(!GameComponentWait(1,100)) {
                 sprite = ++sprite % 9;
                 this.setGameComponentCurrentSprite(sprite);
             }
@@ -103,9 +100,8 @@ public class Hunter extends GameBuilder.GameComponent{
         }
         
         if(codAction == keyZ) {
-            if(!GameComponentWait(500))
-                 gameComponents.add(new Shoot(gameComponents));
-        }
+            if(!GameComponentWait(0,1000))
+                gameComponents.add(new Shoot(gameComponents));
+        }        
     }
-    
 }

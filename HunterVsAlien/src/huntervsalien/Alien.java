@@ -24,7 +24,7 @@ public class Alien extends GameComponent{
         x-=0.2;
         setGameComponentPositionHorizontal(x);
         int sprite = getGameComponentCurrentSprite();
-        if(!GameComponentWait(100)) {
+        if(!GameComponentWait(0,100)) {
                 sprite = ++sprite % 5;
                 setGameComponentCurrentSprite(sprite);
             }

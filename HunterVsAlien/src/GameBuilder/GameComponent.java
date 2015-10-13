@@ -25,8 +25,8 @@ public abstract class GameComponent {
     private int componentSizeWidth; //armazena largura do componente, utilizada no metodo de colisão
     private int componentSizeHeight; //armazena a altura do componente, utilizada no metedo de colisão
     private long time; //armazena o tempo corrente de execução
-    private long timeFinal; //armazena um determinado final de tempo para controle de instruções
-    private boolean flagTime; //flag para arterar timeFinal
+    private long[] timeFinal; //armazena um determinado final de tempo para controle de instruções
+    private boolean[] flagTime; //flag para arterar timeFinal
     private int currentSprite; //indica qual imagem ou sprite o objeto deve estar
     private final boolean[] keyPressed; //armazena quais teclas estão pressionadas ou não
     
@@ -113,9 +113,10 @@ public abstract class GameComponent {
         componentSizeWidth = width;
         componentSizeHeight = height;
         currentSprite = 0;
-        flagTime = false;
+        flagTime = new boolean[100];
+        Arrays.fill(flagTime, Boolean.FALSE);
         time = 0;
-        timeFinal =0;
+        timeFinal = new long[100];
         sprites = new ArrayList<Image>();
         this.gameComponents = gameComponents;
         this.gameSounds = gameSounds;
@@ -281,7 +282,22 @@ public abstract class GameComponent {
      * @param wait
      * @return 
      */
-    public boolean GameComponentWait(long wait) {
+    
+    public boolean GameComponentWait(int idMove, long wait) {
+        if(!flagTime[idMove]) {
+            timeFinal[idMove] = System.currentTimeMillis() + wait;
+            flagTime[idMove] = true;
+        }
+        if(System.currentTimeMillis() <= timeFinal[idMove]) {
+            return true;
+        }
+        else {
+            flagTime[idMove] = false;
+            return false;
+        }
+    }
+    
+    /*public boolean GameComponentWait(long wait) {
         if(!flagTime) {
             timeFinal = System.currentTimeMillis() + wait;
             flagTime = true;
@@ -294,7 +310,7 @@ public abstract class GameComponent {
             return false;
         }
     }
-    
+    */
     /**
      * reproduz e faz o controle de som
      * @param gameSound som a ser referenciado

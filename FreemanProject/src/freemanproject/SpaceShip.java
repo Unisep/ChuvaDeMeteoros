@@ -62,7 +62,7 @@ public class SpaceShip extends GameComponent{
             setGameComponentCurrentSprite(1);
         }
         if(codAction == keyZ) {
-            if(!GameComponentWait(500)) {
+            if(!GameComponentWait(0,500)) {
                 GameComponentPlaySound(gameSounds.get(0), false);
                 Missele m = new Missele(x+18,y,SpaceShip.gameComponents);
                 gameComponents.add(m);
