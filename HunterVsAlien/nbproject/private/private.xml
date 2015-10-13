@@ -4,10 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/freeman/NetBeansProjects/HunterVsAlien/src/GameBuilder/ReadKeyboard.java</file>
+            <file>file:/home/freeman/NetBeansProjects/HunterVsAlien/src/GameBuilder/NewGame.java</file>
             <file>file:/home/freeman/NetBeansProjects/HunterVsAlien/src/huntervsalien/Hunter.java</file>
             <file>file:/home/freeman/NetBeansProjects/HunterVsAlien/src/huntervsalien/BackGround.java</file>
             <file>file:/home/freeman/NetBeansProjects/HunterVsAlien/src/GameBuilder/GameSound.java</file>
             <file>file:/home/freeman/NetBeansProjects/HunterVsAlien/src/GameBuilder/KeyBoard.java</file>
+            <file>file:/home/freeman/NetBeansProjects/HunterVsAlien/src/huntervsalien/Shoot.java</file>
             <file>file:/home/freeman/NetBeansProjects/HunterVsAlien/src/GameBuilder/GameComponent.java</file>
             <file>file:/home/freeman/NetBeansProjects/HunterVsAlien/src/huntervsalien/HunterVsAlien.java</file>
             <file>file:/home/freeman/NetBeansProjects/HunterVsAlien/src/huntervsalien/Alien.java</file>

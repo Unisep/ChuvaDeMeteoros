@@ -21,6 +21,7 @@ public class Hunter extends GameBuilder.GameComponent{
         setGameComponentAddActionKey(keyZ);
         setGameComponentAddActionKey(keyRight);
         setGameComponentAddActionKey(keyLeft);
+        setGameComponentAddActionKey(keyUp);
         setGameComponentAddActionKey(keyNoPressed);
         setGameComponentNoActionKey();
         pular = false;
@@ -60,10 +61,10 @@ public class Hunter extends GameBuilder.GameComponent{
         if(pular)
             pulando(y);
         
-        if(codAction == keyZ) {
+        /*if(codAction == keyUp) {
             pular = true;
             topo = false;
-        }
+        }*/
         
         if(codAction == keyRight) {
             x+=0.2;
@@ -81,10 +82,10 @@ public class Hunter extends GameBuilder.GameComponent{
         if(codAction == keyNoPressed) {
             setGameComponentCurrentSprite(0);
         }
-        if(codAction == keyZ) {
+        if(codAction == keyUp) {
             pular = true;
             topo = false;
-            setGameComponentRemoveActionKey(keyZ);
+            setGameComponentRemoveActionKey(keyUp);
         }
         if(pular) {
             if(!topo && y>=543) {
@@ -97,8 +98,13 @@ public class Hunter extends GameBuilder.GameComponent{
                 y+=0.2;
                 setGameComponentPositionVertical(y);
                 if(y>=643)
-                    setGameComponentAddActionKey(keyZ);
+                    setGameComponentAddActionKey(keyUp);
             }
+        }
+        
+        if(codAction == keyZ) {
+            if(!GameComponentWait(500))
+                 gameComponents.add(new Shoot(gameComponents));
         }
     }
     

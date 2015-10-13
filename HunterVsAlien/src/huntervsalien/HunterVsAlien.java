@@ -23,6 +23,7 @@ public class HunterVsAlien {
         gameComponent = new ArrayList<GameComponent>();
         gameSound = new ArrayList<GameSound>();
         
+        
         gameComponent.add(new BackGround());
         gameComponent.add(new Hunter());
         gameComponent.add(new Alien());
