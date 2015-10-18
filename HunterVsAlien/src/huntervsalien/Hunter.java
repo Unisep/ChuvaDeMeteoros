@@ -28,25 +28,24 @@ public class Hunter extends GameBuilder.GameComponent{
         pular = false;
         topo = false;
     }
-    
-    public void gravidade()
-    {
-        float y = getGameComponentPositionVertical();
-        if(y < 643) {
-            y+=0.2;
-            setGameComponentPositionVertical(y);
-        }
-    }
+   
     
     public void pulando(float y) {
         if(!topo) {
-            y-=0.2;
+            y-=0.1;
         }
         else {
-            y+=0.2;
+            y+=0.1;
         }
         if(y<=503)
             topo = true;
+    }
+    
+    public void atirar(int codAction) {
+        if(codAction == keyZ) {
+            if(!GameComponentWait(0,1000))
+                gameComponents.add(new Shoot(gameComponents));
+        }
     }
     
     @Override
@@ -54,10 +53,12 @@ public class Hunter extends GameBuilder.GameComponent{
         float x = getGameComponentPositionHorizontal();
         float y = getGameComponentPositionVertical();
         
-        if(GameComponentColision(this, gameComponents.get(2)))
-        {
-            gameComponents.remove(this);
-        }
+        try {    
+            if(GameComponentColision(this, gameComponents.get(2)))
+            {
+                gameComponents.remove(this);
+            }
+        }catch(Exception ex){}
         
         if(pular)
             pulando(y);
@@ -66,7 +67,6 @@ public class Hunter extends GameBuilder.GameComponent{
             x+=0.2;
             setGameComponentPositionHorizontal(x);
             int sprite = getGameComponentCurrentSprite();
-            //if(!GameComponentWait(100)) {
             if(!GameComponentWait(1,100)) {
                 sprite = ++sprite % 9;
                 this.setGameComponentCurrentSprite(sprite);
@@ -98,10 +98,6 @@ public class Hunter extends GameBuilder.GameComponent{
                     setGameComponentAddActionKey(keyUp);
             }
         }
-        
-        if(codAction == keyZ) {
-            if(!GameComponentWait(0,1000))
-                gameComponents.add(new Shoot(gameComponents));
-        }        
+        atirar(codAction);
     }
 }

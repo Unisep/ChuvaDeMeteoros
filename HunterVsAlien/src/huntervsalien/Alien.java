@@ -33,7 +33,10 @@ public class Alien extends GameComponent{
         try {
             Shoot t = (Shoot) GameComponentColisionWithType("shoot");
             if(GameComponentColision(this, t))
+            {
                 gameComponents.remove(this);
+                gameComponents.remove(t);
+            }
         }catch(Exception ex){}
     }    
 }

@@ -4,12 +4,16 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/freeman/NetBeansProjects/FreemanProject/src/freemanproject/Meteour.java</file>
+            <file>file:/home/freeman/NetBeansProjects/FreemanProject/src/GameBuilder/AudioPlayer.java</file>
             <file>file:/home/freeman/NetBeansProjects/FreemanProject/src/freemanproject/BackGround.java</file>
             <file>file:/home/freeman/NetBeansProjects/FreemanProject/src/GameBuilder/GameComponent.java</file>
+            <file>file:/home/freeman/NetBeansProjects/FreemanProject/src/GameBuilder/ReadKeyboard.java</file>
             <file>file:/home/freeman/NetBeansProjects/FreemanProject/src/freemanproject/SpaceShip.java</file>
             <file>file:/home/freeman/NetBeansProjects/FreemanProject/src/freemanproject/Missele.java</file>
+            <file>file:/home/freeman/NetBeansProjects/FreemanProject/src/GameBuilder/GameSound.java</file>
             <file>file:/home/freeman/NetBeansProjects/FreemanProject/src/freemanproject/GameOver.java</file>
             <file>file:/home/freeman/NetBeansProjects/FreemanProject/src/freemanproject/FreemanProject.java</file>
+            <file>file:/home/freeman/NetBeansProjects/FreemanProject/src/GameBuilder/DrawPanel.java</file>
         </group>
     </open-files>
 </project-private>

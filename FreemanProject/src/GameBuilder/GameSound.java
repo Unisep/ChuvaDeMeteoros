@@ -17,10 +17,12 @@ public class GameSound {
     private boolean soundEnable;
     private AudioPlayer audioPlayer;
     
+    
     public GameSound(String path) {
         this.path = path;
         soundEnable = true;
-        audioPlayer = new AudioPlayer(new File(path));
+        //audioPlayer = new AudioPlayer(new File(path));
+        audioPlayer = new AudioPlayer(path);
     }
     
     public String getGameSoundPath() {
@@ -49,14 +51,14 @@ public class GameSound {
     }
     
     public void GameSoundPlayWav() {
-        audioPlayer.playWav();
+        audioPlayer.play();
     }
     
     public void GameSoundLoopWav() {
-        audioPlayer.loopWav();
+        audioPlayer.loop();
     }
     
     public void GameSoundStopWav() {
-        audioPlayer.stopWav();
+        audioPlayer.stop();
     }
 }

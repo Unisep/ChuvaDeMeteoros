@@ -25,8 +25,10 @@ public class FreemanProject {
         
         GameSound spacegun = new GameSound("audio/spacegun.wav");
         GameSound imperial = new GameSound("audio/imperial.wav");
+        GameSound fundo = new GameSound("audio/fundo.wav");
         gameSound.add(spacegun);
         gameSound.add(imperial);
+        gameSound.add(fundo);
         new NewGame().buildGame("chuva de meteoros",gameComponent,gameSound);
     }
 }
